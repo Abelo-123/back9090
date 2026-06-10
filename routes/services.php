@@ -219,7 +219,7 @@ if ($route === '/services') {
         // 1. Get database configs
         $rateMultiplier = 55.0;
         try {
-            $stmt = $pdo->query('SELECT setting_value FROM settings WHERE setting_key = "rate_multiplier"');
+            $stmt = $pdo->query("SELECT setting_value FROM settings WHERE setting_key = 'rate_multiplier'");
             $row = $stmt->fetch();
             if ($row) $rateMultiplier = (float)$row['setting_value'] ?: 55.0;
         } catch (Exception $e) {}
@@ -309,7 +309,7 @@ if ($route === '/services') {
         if ($reqCategory === 'Top Services') {
             $topServicesIdsStr = '';
             try {
-                $stmt = $pdo->query('SELECT setting_value FROM settings WHERE setting_key = "top_services_ids"');
+                $stmt = $pdo->query("SELECT setting_value FROM settings WHERE setting_key = 'top_services_ids'");
                 $row = $stmt->fetch();
                 if ($row) $topServicesIdsStr = $row['setting_value'] ?: '';
             } catch (Exception $e) {}
@@ -365,7 +365,7 @@ if ($route === '/services/top') {
         // Get multiplier
         $rateMultiplier = 55.0;
         try {
-            $stmt = $pdo->query('SELECT setting_value FROM settings WHERE setting_key = "rate_multiplier"');
+            $stmt = $pdo->query("SELECT setting_value FROM settings WHERE setting_key = 'rate_multiplier'");
             $row = $stmt->fetch();
             if ($row) $rateMultiplier = (float)$row['setting_value'] ?: 55.0;
         } catch (Exception $e) {}
