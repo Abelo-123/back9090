@@ -56,6 +56,7 @@ $dbName = 'paxyocom_paxyov3';
 
 // Override DB credentials from environment variables if specified
 $dbHost = getEnvVar('DB_HOST', $dbHost);
+$dbPort = getEnvVar('DB_PORT', $dbPort);
 $dbUser = getEnvVar('DB_USER', $dbUser);
 $dbPass = getEnvVar('DB_PASS', $dbPass);
 $dbName = getEnvVar('DB_NAME', $dbName);
