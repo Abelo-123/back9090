@@ -16,8 +16,10 @@ function chapaInitializePayment($data) {
     $firstName = !empty($data['first_name']) ? $data['first_name'] : 'User';
     $lastName = !empty($data['last_name']) ? $data['last_name'] : '';
     
-    $callbackUrl = (strpos($siteUrl, 'localhost') !== false) ? 'https://webhook.site/dummy-paxyo-callback' : "{$siteUrl}/api/chapa-callback";
-    $returnUrl = !empty($data['return_url']) ? $data['return_url'] : "{$siteUrl}/api/chapa-callback";
+    // Ensure siteUrl has protocol
+    $baseUrl = (strpos($siteUrl, 'http') === 0) ? $siteUrl : "https://{$siteUrl}";
+    $callbackUrl = (strpos($baseUrl, 'localhost') !== false) ? 'https://webhook.site/dummy-paxyo-callback' : "{$baseUrl}/api/chapa-callback";
+    $returnUrl = !empty($data['return_url']) ? $data['return_url'] : "{$baseUrl}/api/chapa-callback";
     
     $payload = [
         'amount'        => $data['amount'],
