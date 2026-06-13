@@ -87,7 +87,7 @@ $chapaBaseUrl = getEnvVar('CHAPA_BASE_URL', 'https://api.chapa.co/v1');
 $siteUrl = getEnvVar('SITE_URL', 'https://paxyo.com');
 $minDeposit = (int)(getEnvVar('MIN_DEPOSIT', 10));
 $maxDeposit = (int)(getEnvVar('MAX_DEPOSIT', 100000));
-$smsApiKey = 'QDTMVU3H8Y8ALO4MGY0FROM54E8CY7CZ:949';
+$smsApiKey = getEnvVar('SMS_API_KEY', 'PEQBNQ8X1P6MBJH76701ZUGIX5DP7UOZ:1098');
 $smsApiUrl = 'https://smsethiopia.com/api/sms/send';
 
 // Helper for HTTP requests (replacing fetch)
